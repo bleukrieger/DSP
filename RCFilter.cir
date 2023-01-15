@@ -1,0 +1,20 @@
+RC Circuit Transient Response
+*resistor connected between nodes 1 and 2
+r1 1 2 1k
+*capacitor connected between nodes 2 and 0
+c1 2 0 1u
+*piecewise linear input voltage
+vin 1 0 pwl file=filesource
+.model filesrc filesource (file="Music_1.csv" amploffset=[0 0] amplscale=[1 1]
++ timeoffset=0 timescale=1
++ timerelative=false amplstep=false)
+*transient analysis for 20ms, step size 0.02ms
+.tran 0.02ms 20ms
+*defining the run-time control functions
+.control
+run
+*plotting input and output voltages
+plot v(1) v(2)
+.endc
+.end
+
