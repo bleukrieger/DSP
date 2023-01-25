@@ -9,8 +9,8 @@ function [fx, dft] = dft_shift(a)
 		fx = [-1*(int16(N/2)):int16(N/2)]; % <--
 	else		% if the length is not a multiple of 2
 		disp('Odd');
-		dft =  [a((int16(N)/2)+1:N) a(1:int16(N/2))]; % <--
-		fx = [-1*int16(N/2)+1:int16(N/2)-1]; % <--
+		dft =  [a((int16(N)/2)+1:N) a(1:int16(N/2))]; 
+		fx = [-1*int16(N/2)+1:int16(N/2)-1]; 
 	endif
 	endfunction
 
